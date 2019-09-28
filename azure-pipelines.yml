@@ -12,10 +12,11 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: make --version
+  displayName: 'Check make version'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  - script: docker --version
+  displayName: 'Check docker version'
+
+- script: docker-compose --version
+  displayName: 'Check docker-compose version'
