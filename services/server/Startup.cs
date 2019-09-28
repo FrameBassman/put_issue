@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Server.Middlewares;
 
 namespace Server
 {
@@ -41,6 +42,7 @@ namespace Server
                 app.UseHsts();
             }
 
+            app.UseMiddleware<HealthCheckMiddleware>();
             app.UseMvc();
         }
     }
