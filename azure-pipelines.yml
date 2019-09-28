@@ -15,7 +15,7 @@ steps:
 - script: make --version
   displayName: 'Check make version'
 
-  - script: docker --version
+- script: docker --version
   displayName: 'Check docker version'
 
 - script: docker-compose --version
